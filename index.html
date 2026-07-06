@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GoldLab</title>
+
+    <meta name="theme-color" content="#D4AF37">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🟨 GoldLab</h1>
+    <p class="subtitle">
+        محاسبه تقریبی عیار طلا با روش غوطه‌وری
+    </p>
+
+    <div class="card">
+
+        <label>
+            وزن در هوا (گرم)
+        </label>
+
+        <input
+            id="airWeight"
+            type="number"
+            step="0.001"
+            placeholder="مثلاً 15.250">
+
+        <label>
+            وزن در آب (گرم)
+        </label>
+
+        <input
+            id="waterWeight"
+            type="number"
+            step="0.001"
+            placeholder="مثلاً 14.280">
+
+        <button id="calculateBtn">
+            محاسبه
+        </button>
+
+    </div>
+
+    <div class="result">
+
+        <h2>نتیجه</h2>
+
+        <p>
+            چگالی:
+            <span id="density">
+                ---
+            </span>
+        </p>
+
+        <p>
+            عیار تقریبی:
+            <span id="karat">
+                ---
+            </span>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+</body>
+</html>
